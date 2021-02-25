@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'inputScreen.dart';
 import 'constants.dart';
 
 void main() {
@@ -9,7 +10,7 @@ class BmiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
+      theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,
         accentColor: accentColor,
         scaffoldBackgroundColor: primaryColor,
@@ -21,6 +22,9 @@ class BmiApp extends StatelessWidget {
             "BMI - CALC",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
+        ),
+        body: SafeArea(
+          child: InputScreen(),
         ),
       ),
     );
