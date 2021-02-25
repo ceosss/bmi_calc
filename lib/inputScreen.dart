@@ -1,5 +1,7 @@
+import 'package:bmi_calc/constants.dart';
 import 'package:flutter/material.dart';
-import 'card.dart';
+import 'inputCard.dart';
+import 'genderData.dart';
 
 class InputScreen extends StatefulWidget {
   @override
@@ -13,7 +15,18 @@ class _InputScreenState extends State<InputScreen> {
       children: [
         Expanded(
           child: Row(
-            children: [InputCard(), InputCard()],
+            children: [
+              InputCard(
+                child: GenderData(
+                  gender: Gender.MALE,
+                ),
+              ),
+              InputCard(
+                child: GenderData(
+                  gender: Gender.FEMALE,
+                ),
+              )
+            ],
           ),
         ),
         Expanded(child: InputCard()),
