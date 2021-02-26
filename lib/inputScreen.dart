@@ -9,6 +9,14 @@ class InputScreen extends StatefulWidget {
 }
 
 class _InputScreenState extends State<InputScreen> {
+  String gender;
+  void updateGender(Gender data) {
+    setState(() {
+      gender = data.toString();
+    });
+    print(gender);
+  }
+
   @override
   Widget build(BuildContext context) {
     return (Column(
@@ -16,20 +24,37 @@ class _InputScreenState extends State<InputScreen> {
         Expanded(
           child: Row(
             children: [
-              InputCard(
-                child: GenderData(
-                  gender: Gender.MALE,
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => updateGender(Gender.MALE),
+                  child: InputCard(
+                    child: GenderData(
+                      gender: Gender.MALE,
+                    ),
+                    color:
+                        gender == Gender.MALE.toString() ? pink : accentColor,
+                  ),
                 ),
               ),
-              InputCard(
-                child: GenderData(
-                  gender: Gender.FEMALE,
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => updateGender(Gender.FEMALE),
+                  child: InputCard(
+                    child: GenderData(
+                      gender: Gender.FEMALE,
+                    ),
+                    color:
+                        gender == Gender.FEMALE.toString() ? pink : accentColor,
+                  ),
                 ),
               )
             ],
           ),
         ),
-        Expanded(child: InputCard()),
+        Expanded(
+            child: InputCard(
+          color: accentColor,
+        )),
         Expanded(
           child: Row(
             children: [InputCard(), InputCard()],
