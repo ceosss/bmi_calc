@@ -10,11 +10,11 @@ class InputScreen extends StatefulWidget {
 
 class _InputScreenState extends State<InputScreen> {
   String gender;
+  double height = 150.0;
   void updateGender(Gender data) {
     setState(() {
       gender = data.toString();
     });
-    print(gender);
   }
 
   @override
@@ -54,6 +54,36 @@ class _InputScreenState extends State<InputScreen> {
         Expanded(
             child: InputCard(
           color: accentColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "HEIGHT",
+                style: cardText(),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text(
+                    height.toStringAsFixed(0),
+                    style: cardText(),
+                  ),
+                  Text("cm")
+                ],
+              ),
+              Slider(
+                  value: height,
+                  min: 110,
+                  max: 210,
+                  onChanged: (double value) {
+                    setState(() {
+                      height = value;
+                    });
+                  })
+            ],
+          ),
         )),
         Expanded(
           child: Row(

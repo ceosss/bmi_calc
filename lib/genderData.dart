@@ -22,10 +22,10 @@ class GenderData extends StatelessWidget {
           size: 40,
         ),
         SizedBox(
-          height: 10,
+          height: 15,
         ),
         Text(
-          gender.toString(),
+          gender.toString().toUpperCase(),
           style: cardText(),
         ),
       ],
