@@ -61,27 +61,45 @@ class _InputScreenState extends State<InputScreen> {
                 "HEIGHT",
                 style: cardText(),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  Text(
-                    height.toStringAsFixed(0),
-                    style: cardText(),
-                  ),
-                  Text("cm")
-                ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Text(
+                      height.toStringAsFixed(0),
+                      style: cardText()
+                          .copyWith(fontSize: 40, color: Color(0xffffffff)),
+                    ),
+                    Text(
+                      "cm",
+                      style: cardText().copyWith(fontSize: 20),
+                    )
+                  ],
+                ),
               ),
-              Slider(
-                  value: height,
-                  min: 110,
-                  max: 210,
-                  onChanged: (double value) {
-                    setState(() {
-                      height = value;
-                    });
-                  })
+              SliderTheme(
+                data: SliderThemeData(
+                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
+                  overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
+                  activeTrackColor: Color(0xffffffff),
+                  inactiveTrackColor: Color(0xffc3c3c3),
+                  thumbColor: pink,
+                  trackHeight: 2,
+                  overlayColor: pink.withOpacity(0.25),
+                ),
+                child: Slider(
+                    value: height,
+                    min: 110,
+                    max: 210,
+                    onChanged: (double value) {
+                      setState(() {
+                        height = value;
+                      });
+                    }),
+              )
             ],
           ),
         )),
