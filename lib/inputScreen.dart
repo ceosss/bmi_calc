@@ -2,6 +2,7 @@ import 'package:bmi_calc/constants.dart';
 import 'package:flutter/material.dart';
 import 'inputCard.dart';
 import 'genderData.dart';
+import 'roundBtn.dart';
 
 class InputScreen extends StatefulWidget {
   @override
@@ -105,7 +106,13 @@ class _InputScreenState extends State<InputScreen> {
         )),
         Expanded(
           child: Row(
-            children: [InputCard(), InputCard()],
+            children: [
+              InputCard(
+                color: accentColor,
+                child: RoundBtn(),
+              ),
+              InputCard()
+            ],
           ),
         ),
       ],
