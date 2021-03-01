@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
 
 class BmiCal {
   final int weight;
-  final int height;
+  final double height;
 
   double _bmi;
 

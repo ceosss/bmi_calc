@@ -1,9 +1,11 @@
 import 'package:bmi_calc/Components/bottomBtn.dart';
 import 'package:bmi_calc/Components/constants.dart';
+import 'package:bmi_calc/Helper/bmiCal.dart';
 import 'package:flutter/material.dart';
 import '../Components/inputCard.dart';
 import '../Components/genderData.dart';
 import '../Components/roundBtn.dart';
+import 'resultScreen.dart';
 
 class InputScreen extends StatefulWidget {
   @override
@@ -184,7 +186,18 @@ class _InputScreenState extends State<InputScreen> {
           ),
         ),
         BottomBtn(
-          onPress: () => print("Pressed"),
+          onPress: () {
+            print("object");
+            BmiCal bmi = BmiCal(height: height, weight: weight);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ResultScreen(
+                          bmiScore: bmi.getBMI(),
+                          resultText: bmi.getResult(),
+                          interpretation: bmi.getInterpretation(),
+                        )));
+          },
           text: "Calculate",
         ),
       ],

@@ -8,6 +8,7 @@ class BottomBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPress,
       child: Container(
         width: double.infinity,
         alignment: Alignment.center,

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calc/Components/bottomBtn.dart';
 
 class ResultScreen extends StatelessWidget {
-  final double bmiScore;
+  final String bmiScore;
   final String resultText;
   final String interpretation;
 
@@ -55,7 +55,9 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
             ),
-            BottomBtn(text: "Re-Calculate My BMI", onPress: null),
+            BottomBtn(
+                text: "Re-Calculate My BMI",
+                onPress: () => Navigator.pop(context)),
           ],
         ),
       ),
