@@ -1,9 +1,9 @@
-import 'package:bmi_calc/bottomBtn.dart';
-import 'package:bmi_calc/constants.dart';
+import 'package:bmi_calc/Components/bottomBtn.dart';
+import 'package:bmi_calc/Components/constants.dart';
 import 'package:flutter/material.dart';
-import 'inputCard.dart';
-import 'genderData.dart';
-import 'roundBtn.dart';
+import '../Components/inputCard.dart';
+import '../Components/genderData.dart';
+import '../Components/roundBtn.dart';
 
 class InputScreen extends StatefulWidget {
   @override

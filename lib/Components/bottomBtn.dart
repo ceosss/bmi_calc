@@ -1,4 +1,4 @@
-import 'package:bmi_calc/constants.dart';
+import 'package:bmi_calc/Components/constants.dart';
 import 'package:flutter/material.dart';
 
 class BottomBtn extends StatelessWidget {

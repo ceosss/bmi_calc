@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'inputScreen.dart';
-import 'constants.dart';
+import 'Screens/inputScreen.dart';
+import 'Components/constants.dart';
 
 void main() {
   runApp(BmiApp());
