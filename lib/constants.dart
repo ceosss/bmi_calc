@@ -9,3 +9,6 @@ enum Gender { MALE, FEMALE }
 
 TextStyle cardText() => TextStyle(
     fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xff8d8e98));
+
+TextStyle bigText() => TextStyle(
+    fontSize: 40, color: Color(0xffffffff), fontWeight: FontWeight.bold);

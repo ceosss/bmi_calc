@@ -12,6 +12,7 @@ class InputScreen extends StatefulWidget {
 class _InputScreenState extends State<InputScreen> {
   String gender;
   double height = 150.0;
+  int weight = 50;
   void updateGender(Gender data) {
     setState(() {
       gender = data.toString();
@@ -71,8 +72,7 @@ class _InputScreenState extends State<InputScreen> {
                   children: [
                     Text(
                       height.toStringAsFixed(0),
-                      style: cardText()
-                          .copyWith(fontSize: 40, color: Color(0xffffffff)),
+                      style: bigText(),
                     ),
                     Text(
                       "cm",
@@ -108,9 +108,24 @@ class _InputScreenState extends State<InputScreen> {
           child: Row(
             children: [
               InputCard(
-                color: accentColor,
-                child: RoundBtn(),
-              ),
+                  color: accentColor,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "WEIGHT",
+                        style: cardText(),
+                      ),
+                      Text(
+                        weight.toString(),
+                        style: bigText(),
+                      ),
+                      SizedBox(height: 30),
+                      Row(
+                        children: [RoundBtn(), RoundBtn()],
+                      )
+                    ],
+                  )),
               InputCard()
             ],
           ),
