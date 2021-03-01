@@ -19,6 +19,12 @@ class _InputScreenState extends State<InputScreen> {
     });
   }
 
+  void updateHeight(Operation ops) {
+    setState(() {
+      ops == Operation.ADD ? weight++ : weight--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return (Column(
@@ -116,13 +122,24 @@ class _InputScreenState extends State<InputScreen> {
                         "WEIGHT",
                         style: cardText(),
                       ),
-                      Text(
-                        weight.toString(),
-                        style: bigText(),
+                      Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Text(
+                          weight.toString(),
+                          style: bigText(),
+                        ),
                       ),
-                      SizedBox(height: 30),
                       Row(
-                        children: [RoundBtn(), RoundBtn()],
+                        children: [
+                          RoundBtn(
+                            ops: Operation.SUB,
+                            onPress: () => updateHeight(Operation.SUB),
+                          ),
+                          RoundBtn(
+                            ops: Operation.ADD,
+                            onPress: () => updateHeight(Operation.ADD),
+                          )
+                        ],
                       )
                     ],
                   )),

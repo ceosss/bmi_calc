@@ -7,6 +7,8 @@ const pink = Color(0xffEB1455);
 
 enum Gender { MALE, FEMALE }
 
+enum Operation { ADD, SUB }
+
 TextStyle cardText() => TextStyle(
     fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xff8d8e98));
 
