@@ -1,3 +1,4 @@
+import 'package:bmi_calc/bottomBtn.dart';
 import 'package:bmi_calc/constants.dart';
 import 'package:flutter/material.dart';
 import 'inputCard.dart';
@@ -181,6 +182,10 @@ class _InputScreenState extends State<InputScreen> {
               )
             ],
           ),
+        ),
+        BottomBtn(
+          onPress: () => print("Pressed"),
+          text: "Calculate",
         ),
       ],
     ));

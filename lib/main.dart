@@ -23,9 +23,11 @@ class BmiApp extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        body: SafeArea(
-          child: InputScreen(),
-        ),
+        body:
+            // SafeArea(
+            // child:
+            InputScreen(),
+        // ),
       ),
     );
   }

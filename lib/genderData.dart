@@ -26,7 +26,7 @@ class GenderData extends StatelessWidget {
         ),
         Text(
           gender.toString().toUpperCase(),
-          style: cardText(),
+          style: cardText().copyWith(color: Color(0xffffffff)),
         ),
       ],
     );
