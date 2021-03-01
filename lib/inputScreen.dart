@@ -13,6 +13,7 @@ class _InputScreenState extends State<InputScreen> {
   String gender;
   double height = 150.0;
   int weight = 50;
+  int age = 18;
   void updateGender(Gender data) {
     setState(() {
       gender = data.toString();
@@ -22,6 +23,12 @@ class _InputScreenState extends State<InputScreen> {
   void updateHeight(Operation ops) {
     setState(() {
       ops == Operation.ADD ? weight++ : weight--;
+    });
+  }
+
+  void updateAge(Operation ops) {
+    setState(() {
+      ops == Operation.ADD ? age++ : age--;
     });
   }
 
@@ -143,7 +150,35 @@ class _InputScreenState extends State<InputScreen> {
                       )
                     ],
                   )),
-              InputCard()
+              InputCard(
+                color: accentColor,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "AGE",
+                      style: cardText(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        age.toString(),
+                        style: bigText(),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        RoundBtn(
+                            ops: Operation.SUB,
+                            onPress: () => updateAge(Operation.SUB)),
+                        RoundBtn(
+                            ops: Operation.ADD,
+                            onPress: () => updateAge(Operation.ADD))
+                      ],
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
